@@ -32,10 +32,10 @@
     \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
       \usebeamerfont{author in head/foot}\insertshortauthor\hspace*{1ex}(\insertshortinstitute)
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
       \usebeamerfont{title in head/foot}\insertshorttitle
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \begin{beamercolorbox}[wd=.3\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
       \insertshortdate
     \end{beamercolorbox}%
     \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{page number in head/foot}%
@@ -247,9 +247,16 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{オンラインポーカーへの疑惑}
+  
   \simplecallout{-}{red!20}{このサーバーは本当に公平なのか\ce{😈}}
 
   \pause
+  \begin{itemize}
+    \item<+-> サーバーはその気になれば、意図した順番に山札を並べたり、
+    あるユーザーの手札を他のユーザーへ教えたりできる
+  \end{itemize}
+  
   \uncover<+->{
     \simplecallout{+}{green!20}{サーバーなしでオンラインポーカーやるか！}
   }
@@ -257,12 +264,17 @@
   \uncover<+->{
     \simplecallout{-}{cyan!20}{%
       信頼できる第三者\textbf{なし}の公平なポーカー \\%
-      {\hfill\huge ``Mental Poker''\hfill}
+      {\hfill\LARGE ``Mental Poker''\hfill}
     }
   }
 
+  \begin{itemize}
+    \item<+-> RSA暗号の発明者であるシャミア・リベスト・エーデルマンによって
+    1979年に発表された
+  \end{itemize}
+
   \uncover<+->{
-    \simplecallout{+}{blue!20}{今日はコンピューターのかわりに\textbf{物理的な方法}で解説}
+    \simplecallout{+}{blue!20}{今日はコンピューターを使わずに\textbf{物理的な方法}で解説}
   }
 \end{frame}
 
@@ -397,7 +409,11 @@
 
   \vspace{1em}
 
-  ---山札づくり---
+  ---山札づくり\footnote[frame]{%
+    実はここから紹介するプロトコルは説明を簡単にするため僕が加えた変更により、
+    アリスはチートができる。
+    2014年の僕は気がつかなかったが、この発表を見ている人たちは気がつくだろうか？
+  }---
 \end{frame}
 
 \newcounter{ProtocolIndex}
@@ -429,7 +445,7 @@
     \end{figure}
 
     \item<+-> このとき、アリスは自分で箱の中にカードを入れたので、
-    カードと箱の対応を記録しておくことができる\ce{😈}
+    カードと箱の順の対応を記録しておくことができる\ce{😈}
   \end{itemize}
 \end{frame}
 
